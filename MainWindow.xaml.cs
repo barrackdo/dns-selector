@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
@@ -68,6 +69,26 @@ public partial class MainWindow : Window
             var theme = ThemeManager.Resolve(_settings.Settings.Theme);
             ThemeManager.ApplyTitleBar(this, theme == AppTheme.Dark);
         };
+
+        // バージョン番号を表示（AssemblyInformationalVersion を使用し、ビルドメタデータは除去）
+        var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+        var infoVersion = assembly
+            .GetCustomAttribute<System.Reflection.AssemblyInformationalVersionAttribute>()
+            ?.InformationalVersion;
+        if (string.IsNullOrWhiteSpace(infoVersion))
+        {
+            // フォールバック: AssemblyVersion から末尾の ".0" を除去
+            var v = assembly.GetName().Version;
+            infoVersion = v is null ? "0.1.0" : $"{v.Major}.{v.Minor}.{v.Build}";
+        }
+        else
+        {
+            // 末尾の "+<commit hash>" などのビルドメタデータを除去
+            var plusIndex = infoVersion.IndexOf('+');
+            if (plusIndex >= 0)
+                infoVersion = infoVersion[..plusIndex];
+        }
+        VersionText.Text = $"バージョン {infoVersion}";
     }
 
     private async Task OnLoadedAsync()

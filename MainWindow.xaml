@@ -21,6 +21,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Margin="0,0,0,10">
@@ -127,5 +128,6 @@
         </StackPanel>
 
         <TextBlock Grid.Row="5" x:Name="StatusText" TextWrapping="Wrap" />
+        <TextBlock Grid.Row="6" x:Name="VersionText" Text="バージョン 0.1.0" HorizontalAlignment="Right" Margin="0,4,12,4" />
     </Grid>
 </Window>
