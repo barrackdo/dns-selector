@@ -5,6 +5,12 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  # リリース作成・更新のための明示的権限
+  contents: read
+  # パッケージ登録のための権限（必要に応じて）
+  # packages: read
+
 jobs:
   build:
     runs-on: windows-latest
