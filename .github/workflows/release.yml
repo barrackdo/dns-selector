@@ -26,12 +26,14 @@ jobs:
         run: dotnet publish -c Release -r win-x64
 
       - name: Create Release ZIP
-        run: Compress-Archive -Path "bin\Release\net11.0-windows\win-x64\publish\*" -DestinationPath "DnsSelector.zip"
+        run: |
+          Copy-Item README.md, LICENSE "bin\Release\net11.0-windows\win-x64\publish\"
+          Compress-Archive -Path "bin\Release\net11.0-windows\win-x64\publish\*" -DestinationPath "DnsSelector.zip"
 
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v3.0.4
         with:
-          files: DnsSelector.zip, README.md, LICENSE
+          files: DnsSelector.zip
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
           draft: false
