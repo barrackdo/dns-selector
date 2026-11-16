@@ -6,7 +6,7 @@ on:
       - 'v*'
 
 permissions:
-  # リリース作成・更新のための明示的権限（write が必要）
+  # リリース作成・更新のための明示的権限
   contents: write
 
 jobs:
@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6.1.0
         with:
           dotnet-version: '11.0.x'
 
@@ -29,7 +29,7 @@ jobs:
         run: Compress-Archive -Path "bin\Release\net11.0-windows\win-x64\publish\*" -DestinationPath "DnsSelector.zip"
 
       - name: Upload Release Asset
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3.0.4
         with:
           files: DnsSelector.zip
           tag_name: ${{ github.ref_name }}
