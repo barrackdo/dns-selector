@@ -12,6 +12,9 @@
     <RootNamespace>DnsSelector</RootNamespace>
     <Version>0.1.0</Version>
     <LangVersion>latest</LangVersion>
+    <!-- WPF のネイティブ依存関係 (DirectWriteForwarder.dll など) を SingleFile 配布時に正しく抽出するための設定 -->
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
 
   <ItemGroup>
