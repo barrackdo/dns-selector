@@ -3,3 +3,6 @@ obj/
 *.user
 ignore/
 .necoder
+*_ApplicationError.log
+*_dotNetRuntime.log
+*_WindowsErrorReporting.log
