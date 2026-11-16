@@ -23,7 +23,7 @@ jobs:
           dotnet-version: '11.0.x'
 
       - name: Publish Release Build
-        run: dotnet publish -c Release -r win-x64 --self-contained true
+        run: dotnet publish -c Release -r win-x64
 
       - name: Create Release ZIP
         run: Compress-Archive -Path "bin\Release\net11.0-windows\win-x64\publish\*" -DestinationPath "DnsSelector.zip"
