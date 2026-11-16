@@ -1,0 +1,68 @@
+{
+  "profiles": [
+    {
+      "name": "Cloudflare",
+      "description": "高速でプライバシー重視のパブリック DNS。1.1.1.1 で知られる。",
+      "website": "https://1.1.1.1/",
+      "ipv4": ["1.1.1.1", "1.0.0.1"],
+      "ipv6": ["2606:4700:4700::1111", "2606:4700:4700::1001"],
+      "features": "応答速度に優れ、プライバシー保護に重点を置いています。ログは24時間で削除され、個人を特定できる情報は販売しません。DNS over TLS (DoT) / DNS over HTTPS (DoH) に対応。マルウェアブロック機能も利用可能です。"
+    },
+    {
+      "name": "Google",
+      "description": "Google が提供するパブリック DNS。安定性と速度に定評。",
+      "website": "https://developers.google.com/speed/public-dns",
+      "ipv4": ["8.8.8.8", "8.8.4.4"],
+      "ipv6": ["2001:4860:4860::8888", "2001:4860:4860::8844"],
+      "features": "独自のキャッシュシステムにより応答速度の向上を図っています。DNSキャッシュポイズニング対策や、DNS over TLS (DoT) / DNS over HTTPS (DoH) に対応。個人・法人を問わず無料で利用可能です。"
+    },
+    {
+      "name": "Quad9",
+      "description": "マルウェア対策ブロック機能付きのセキュリティ重視 DNS。",
+      "website": "https://www.quad9.net/",
+      "ipv4": ["9.9.9.9", "149.112.112.112"],
+      "ipv6": ["2620:fe::fe", "2620:fe::9"],
+      "features": "脅威インテリジェンスによるマルウェア・フィッシングサイトのブロックに対応。プライバシーを重視し、個人データの販売は行いません。DNS over TLS (DoT) / DNS over HTTPS (DoH) に対応。"
+    },
+    {
+      "name": "OpenDNS",
+      "description": "Cisco が提供する老舗パブリック DNS。フィルタリング機能あり。",
+      "website": "https://www.opendns.com/",
+      "ipv4": ["208.67.222.222", "208.67.220.220"],
+      "ipv6": ["2620:119:35::35", "2620:119:53::53"],
+      "features": "フィルタリング機能により、マルウェアサイトや成人向けコンテンツをブロックできます。DNS over TLS (DoT) に対応。無料版と有料版があります。"
+    },
+    {
+      "name": "AdGuard DNS",
+      "description": "広告・トラッカーをブロックする DNS。",
+      "website": "https://adguard-dns.io/",
+      "ipv4": ["94.140.14.14", "94.140.15.15"],
+      "ipv6": ["2a10:50c0::ad1:ff", "2a10:50c0::ad2:ff"],
+      "features": "広告・トラッカー・マルウェアをネットワークレベルでブロック。プライバシー保護に重点。DNS over TLS (DoT) / DNS over HTTPS (DoH) に対応。"
+    },
+    {
+      "name": "AdGuard DNS Family",
+      "description": "AdGuard DNS のファミリー向け。成人向けコンテンツをブロック。",
+      "website": "https://adguard-dns.io/",
+      "ipv4": ["94.140.14.15", "94.140.15.16"],
+      "ipv6": ["2a10:50c0::bad1:ff", "2a10:50c0::bad2:ff"],
+      "features": "AdGuard DNS の機能に加え、成人向けコンテンツをブロック。ファミリー向けフィルタリング。DNS over TLS (DoT) / DNS over HTTPS (DoH) に対応。"
+    },
+    {
+      "name": "Cloudflare Family",
+      "description": "Cloudflare のファミリー向け。マルウェア・成人向けコンテンツをブロック。",
+      "website": "https://1.1.1.1/family/",
+      "ipv4": ["1.1.1.3", "1.0.0.3"],
+      "ipv6": ["2606:4700:4700::1113", "2606:4700:4700::1003"],
+      "features": "Cloudflare の高速性能に加え、マルウェアおよび成人向けコンテンツをブロック。ファミリー向けフィルタリング。DNS over TLS (DoT) / DNS over HTTPS (DoH) に対応。"
+    },
+    {
+      "name": "Quad9 (Unsecured)",
+      "description": "Quad9 のフィルタリングなし版。セキュリティブロックを行わない。",
+      "website": "https://www.quad9.net/",
+      "ipv4": ["9.9.9.10", "149.112.112.10"],
+      "ipv6": ["2620:fe::10", "2620:fe::fe:10"],
+      "features": "Quad9 のインフラストラクチャを使用しつつ、マルウェアブロックなどのフィルタリングを行わない版。プライバシー重視。DNS over TLS (DoT) / DNS over HTTPS (DoH) に対応。"
+    }
+  ]
+}
