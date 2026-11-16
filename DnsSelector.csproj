@@ -19,12 +19,6 @@
     <EmbeddedResource Include="Resources\GeoData\nginx-geo.txt" />
     <Resource Include="Resources\images\dns-selector.ico" />
     <Resource Include="Resources\images\dns-selector_*.png" />
-    <!-- テスト用 GeoIP.mmdb: ローカル開発用。本番発行には同梱しない -->
-    <Content Include="Resources\GeoIP.mmdb">
-      <Link>GeoIP.mmdb</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
