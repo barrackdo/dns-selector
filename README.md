@@ -11,9 +11,23 @@ LTS の .NET 10 ではなく STS の .NET 11 を使っているのもそれが�
 ## 動作要件
 
 - Windows 10 / 11
-- .NET 11 デスクトップランタイム（配布用に自己完結で発行する場合は不要）
+- .NET 11 デスクトップランタイム
 
 DNS サーバーの設定を変えるため管理者権限が必要です。`app.manifest` で `requireAdministrator` を指定しているため、起動時に UAC の確認が表示されます。
+
+## インストール
+1. [Release](https://github.com/barrackdo/dns-selector/releases) から最新版の ZIP ファイルをダウンロードし展開するだけです。
+
+## .NET 11.0 ランタイムのインストール
+.NET 11 デスクトップランタイムがインストールされてない場合はインストールしてください。
+
+1. マニュアル操作でインストール
+[.NET 11.0 ランタイムのダウンロード](https://dotnet.microsoft.com/ja-jp/download/dotnet/11.0/runtime) の .NET デスクトップ ランタイムをダウンロードしインストールする。
+
+2. WinGet でインストール
+```
+winget install --id Microsoft.DotNet.DesktopRuntime.11
+```
 
 ## 使い方
 
